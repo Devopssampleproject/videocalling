@@ -1,4 +1,8 @@
-stage('create branch')
+pipeline{
+agent { any }
+
+        { 
+  stage('create branch')
         { 
             stdout = sh(script:'git checkout -b test-release/2021.11.01',  returnStdout: true)
             println("GIT add stdout ################ " + stdout + " ####################")
@@ -8,3 +12,5 @@ stage('create branch')
                 sh('git push origin test-release/2021.11.01')         
             }
         }
+        }
+}
