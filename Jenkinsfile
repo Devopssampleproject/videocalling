@@ -6,7 +6,7 @@ pipeline{
                          SECRET_FILE_ID = credentials('gitlogin_newbranch')}
         steps{
                // sh 'git checkout release/2021.11.01'
-                //sh 'git checkout -b test14-release/2021.11.01'
+                //sh 'git checkout -b test15-release/2021.11.01'
             //stdout = sh(script:'git checkout -b test-release/2021.11.01',  returnStdout: true)
             // println("GIT add stdout ################ " + stdout + " ####################")
             
@@ -15,8 +15,8 @@ pipeline{
                 //sh 'git config --global user.email "mlk.lucky836@gmail.com"'
                 //sh 'git config --global  "mlk.lucky836@gmail.com"'
                
-                        sh 'git checkout -b test14-release/2021.11.01'
-              sh 'git push --set-upstream origin test14-release/2021.11.01 '
+                        sh 'git checkout -b test15-release/2021.11.01'
+              sh 'git push --set-upstream origin test15-release/2021.11.01 '
                  
                // sh 'git push https://github.com/Devopssampleproject/videocalling.git test09-release/2021.11.01'
                // https://{TOKEN}@github.com/{USER}/{REPO}.git
