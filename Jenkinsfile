@@ -8,9 +8,9 @@ pipeline{
             // println("GIT add stdout ################ " + stdout + " ####################")
             
             withCredentials([usernamePassword(credentialsId: 'gitlogin', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) }
-            steps{
+            
                 sh('git push origin test-release/2021.11.01')         
-            }
+            
         
                 } //stage close
         } //stages close
