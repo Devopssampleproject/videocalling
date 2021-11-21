@@ -14,10 +14,10 @@ pipeline{
                 //sh 'git config --global user.name "lakshmankumar2611"'
                 //sh 'git config --global user.email "mlk.lucky836@gmail.com"'
                 //sh 'git config --global  "mlk.lucky836@gmail.com"'
-               
+               withCredentials([usernamePassword(credentialsId: 'github-token', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]){
                         sh 'git checkout -b test15-release/2021.11.01'
               sh 'git push --set-upstream origin test15-release/2021.11.01 '
-                 
+               }
                // sh 'git push https://github.com/Devopssampleproject/videocalling.git test09-release/2021.11.01'
                // https://{TOKEN}@github.com/{USER}/{REPO}.git
                 } //steps close
