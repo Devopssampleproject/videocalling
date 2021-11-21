@@ -9,8 +9,8 @@ pipeline{
             
             // withCredentials([usernamePassword(credentialsId: 'gitlogin', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) 
             
-                sh('git push origin test-release/2021.11.01')         
-                }
+                sh 'git push origin test-release/2021.11.01'         
+                } //steps close
         
                 } //stage close
         } //stages close
