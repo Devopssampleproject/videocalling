@@ -2,8 +2,8 @@ pipeline{
         agent {label 'master'}
         stages{ 
                 stage('create branch'){
-                       // environment{
-                        // SECRET_FILE_ID = credentials('gitlogin_newbranch')}
+                        environment{
+                         SECRET_FILE_ID = credentials('gitlogin_newbranch')}
         steps{
                // sh 'git checkout release/2021.11.01'
                 //sh 'git checkout -b test14-release/2021.11.01'
