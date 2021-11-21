@@ -1,7 +1,6 @@
 pipeline{
-agent { any }
-
-        { 
+agent {lable 'master'}
+        stages{ 
   stage('create branch')
         { 
             stdout = sh(script:'git checkout -b test-release/2021.11.01',  returnStdout: true)
