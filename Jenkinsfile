@@ -15,8 +15,11 @@ pipeline{
                 //sh 'git config --global user.email "mlk.lucky836@gmail.com"'
                 //sh 'git config --global  "mlk.lucky836@gmail.com"'
                //withCredentials([usernamePassword(credentialsId: '$SECRET_FILE_ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')])
+                 sh 'ls -a'
+                
                         sh 'git checkout -b test17-release/2021.11.01'
                        sh 'git branch'
+                sh 'pwd'
               sh 'git push --set-upstream origin test17-release/2021.11.01 '
                
                // sh 'git push https://github.com/Devopssampleproject/videocalling.git test09-release/2021.11.01'
