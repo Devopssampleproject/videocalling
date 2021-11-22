@@ -19,7 +19,7 @@ pipeline{
                // }
              // sh 'git config --global --unset credential.helper'
             //  withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-sshkey', keyFileVariable: 'SSH_KEY', usernameVariable: 'GIT_USERNAME')])
-                withCredentials([string(credentialsId: 'jenkins-sshkey', keyFileVariable: 'GITHUB_HOST_KEY')]) {
+                withCredentials([string(credentialsId: 'GITHUB_HOST_KEY', keyFileVariable: 'GITHUB_HOST_KEY')]) {
                     sh 'mkdir -p ~/.ssh && echo "$GITHUB_HOST_KEY" >> ~/.ssh/known_hosts'
                 }
                 sshagent(credentials : ['jenkins-sshkey'])
@@ -32,7 +32,7 @@ pipeline{
               //           sh 'git checkout -b test46-release/2021.11.01'
 //                         sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git test45-release/2021.11.01'
              //            sh 'git config --global --unset credential.helper'
-                         sh 'GIT_SSH_COMMAND=ssh -i /home/ec2-user/.ssh/id_rsa.pub && git push origin test46-release/2021.11.01'
+                         sh 'git push -f origin  HEAD:test46-release/2021.11.01'
                         
                  }
                    
