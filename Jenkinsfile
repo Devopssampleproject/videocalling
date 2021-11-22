@@ -23,7 +23,7 @@ pipeline{
               //           sh 'git checkout -b test46-release/2021.11.01'
 //                         sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git test45-release/2021.11.01'
                          sh 'git config --global --unset credential.helper'
-                         sh 'GIT_SSH_COMMAND="ssh -i $SSH_KEY" git push --set-upstream origin test46-release/2021.11.01'
+                         sh 'GIT_SSH_COMMAND="ssh -i $SSH_KEY" git push test46-release/2021.11.01'
                         
                  }
                    
