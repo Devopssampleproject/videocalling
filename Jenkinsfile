@@ -29,7 +29,7 @@ pipeline{
               //           sh 'git checkout -b test46-release/2021.11.01'
 //                         sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git test45-release/2021.11.01'
              //            sh 'git config --global --unset credential.helper'
-                         sh 'GIT_SSH_COMMAND=ssh -i /home/ec2-user/.ssh/id_rsa.pub && git push origin test46-release/2021.11.01'
+                         sh 'export GIT_SSH_COMMAND=ssh -i /home/ec2-user/.ssh/id_rsa.pub && git push origin test46-release/2021.11.01'
                         
                  }
                    
