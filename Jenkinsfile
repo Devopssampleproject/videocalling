@@ -16,7 +16,7 @@ pipeline{
                        
           //              sh 'git push --set-upstream origin test24-release/2021.11.01 --repo=https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git'
                         
-                }
+               // }
              
               withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-sshkey')]) 
                  {       sh 'git checkout -b test46-release/2021.11.01'
