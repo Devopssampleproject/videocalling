@@ -19,12 +19,7 @@ pipeline{
                // }
              
               withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-sshkey', keyFileVariable: 'SSH_KEY')]) 
-                 {      sh 'git config --list |
-                            while read line; do
-                                git config -f cfg \
-                                    "`echo $line | sed 's/=.\+//'`" \
-                                    "`echo $line | sed 's/^.\+=//'`"
-                            done'
+                 {      sh 'git config --list'
               //           sh 'git checkout -b test46-release/2021.11.01'
 //                         sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git test45-release/2021.11.01'
              //            sh 'git config --global --unset credential.helper'
