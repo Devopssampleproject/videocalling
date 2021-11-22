@@ -19,10 +19,10 @@ pipeline{
                // }
              // sh 'git config --global --unset credential.helper'
             //  withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-sshkey', keyFileVariable: 'SSH_KEY', usernameVariable: 'GIT_USERNAME')])
-                withCredentials([string(credentialsId: 'GITHUB_HOST_KEY', keyFileVariable: 'GITHUB_HOST_KEY')]) {
+                withCredentials([string(credentialsId: 'GITHUB_HOST_KEY', variable: 'GITHUB_HOST_KEY')]) {
                     sh 'mkdir -p ~/.ssh && echo "$GITHUB_HOST_KEY" >> ~/.ssh/known_hosts'
                 }
-                sshagent(credentials : ['jenkins-sshkey'])
+                sshagent(credentials : ['gitlogin'])
                 {       //sh 'git config --global --unset credential.helper'
                        // sh 'git config credential.helper=env --username=${GIT_USERNAME}'
                         sh 'git config --list'
