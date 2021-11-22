@@ -19,7 +19,7 @@ pipeline{
                // }
               sh 'git config --global --unset credential.helper'
             //  withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-sshkey', keyFileVariable: 'SSH_KEY', usernameVariable: 'GIT_USERNAME')])
-                sshagent([credentials: 'jenkins-sshkey'])
+                sshagent(credentials : ['jenkins-sshkey'])
                 {       sh 'git config --global --unset credential.helper'
                         sh 'git config credential.helper=env --username=${GIT_USERNAME}'
                         sh 'git config --list'
