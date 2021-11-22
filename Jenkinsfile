@@ -16,8 +16,8 @@ pipeline{
                 //sh 'git config --global  "mlk.lucky836@gmail.com"'
                
                withCredentials([usernamePassword(credentialsId: 'gitlogin', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')])
-                sh 'echo $PASSWORD'
-                sh 'echo $USERNAME'
+                { sh 'echo $PASSWORD'
+                 sh 'echo $USERNAME'}
                        // sh 'git checkout -b test23-release/2021.11.01'
                 //sh 'git remote -v'
                    
