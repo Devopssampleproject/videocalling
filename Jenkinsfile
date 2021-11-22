@@ -18,7 +18,7 @@ pipeline{
                withCredentials([usernamePassword(credentialsId: 'gitlogin', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')])
                 { sh 'echo $PASSWORD'
                   sh 'echo $USERNAME'
-                  sh 'git config credential.helper "!f() { echo \"username=${GIT_USER}\\npassword=${GIT_PASS}\"; }; f"'
+                  sh 'git config credential.helper "!f() { echo \"username=${GIT_USER}\\password=${GIT_PASS}\"; }; f"'
                  // sh 'git remote add origin https://github.com/Devopssampleproject/videocalling.git'
                   sh 'git push --set-upstream origin test24-release/2021.11.01'
                   sh 'echo $USERNAME'
