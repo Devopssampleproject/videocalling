@@ -19,7 +19,8 @@ pipeline{
                // }
              
               withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-sshkey', keyFileVariable: 'keyfile')]) 
-                 {       sh 'git checkout -b test46-release/2021.11.01'
+                 {       sh 'git config --global credential.helper cache'
+                         sh 'git checkout -b test46-release/2021.11.01'
 //                         sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git test45-release/2021.11.01'
                        
                          sh 'git push --set-upstream origin test46-release/2021.11.01'
