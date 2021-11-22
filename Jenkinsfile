@@ -17,9 +17,10 @@ pipeline{
                //withCredentials([usernamePassword(credentialsId: '$SECRET_FILE_ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')])
                
                 
-                        sh 'git checkout -b test21-release/2021.11.01'
+                        sh 'git checkout -b test22-release/2021.11.01'
+                sh 'git remote -v'
                    
-              sh 'git push --set-upstream origin test21-release/2021.11.01 '
+              sh 'git push --set-upstream origin test22-release/2021.11.01 '
                
                // sh 'git push https://github.com/Devopssampleproject/videocalling.git test09-release/2021.11.01'
                // https://{TOKEN}@github.com/{USER}/{REPO}.git
