@@ -21,7 +21,7 @@ pipeline{
                 withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-sshkey', keyFileVariable: 'SSH_KEY', usernameVariable: 'GIT_USERNAME')]) {
                 //withCredentials([string(credentialsId: 'GITHUB_HOST_KEY', variable: 'GITHUB_HOST_KEY')]) {
                 //    sh 'mkdir -p ~/.ssh && echo "$GITHUB_HOST_KEY" >> ~/.ssh/known_hosts'
-                    sh 'GIT_SSH_COMMAND='ssh -i  $SSH_KEY -o IdentitiesOnly=yes'git push -f origin  HEAD:test46-release/2021.11.01'
+                        sh 'GIT_SSH_COMMAND='ssh -i  ${SSH_KEY} -o IdentitiesOnly=yes'git push -f origin  HEAD:test46-release/2021.11.01'
                 }
                 sshagent(credentials : ['gitlogin'])
                 {       //sh 'git config --global --unset credential.helper'
