@@ -12,9 +12,10 @@ pipeline{
             
             withCredentials([usernamePassword(credentialsId: 'gitlogin', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) 
                 {
-                        sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git'
                         sh 'git checkout -b test26-release/2021.11.01'
-                        sh 'git push --set-upstream origin test24-release/2021.11.01'
+                        
+                        sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git --set-upstream origin test24-release/2021.11.01'
+                        
                         
                 }
                
