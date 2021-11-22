@@ -17,19 +17,19 @@ pipeline{
           //              sh 'git push --set-upstream origin test24-release/2021.11.01 --repo=https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git'
                         
                // }
-              sh 'git config --global --unset credential.helper'
+             // sh 'git config --global --unset credential.helper'
             //  withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-sshkey', keyFileVariable: 'SSH_KEY', usernameVariable: 'GIT_USERNAME')])
                 sshagent(credentials : ['jenkins-sshkey'])
-                {       sh 'git config --global --unset credential.helper'
-                        sh 'git config credential.helper=env --username=${GIT_USERNAME}'
+                {       //sh 'git config --global --unset credential.helper'
+                       // sh 'git config credential.helper=env --username=${GIT_USERNAME}'
                         sh 'git config --list'
                         //sh 'git config --global --unset credential.helper'
                         //sh 'git config --system --unset credential.helper'
-                        sh 'git config --list'
+                       // sh 'git config --list'
               //           sh 'git checkout -b test46-release/2021.11.01'
 //                         sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git test45-release/2021.11.01'
              //            sh 'git config --global --unset credential.helper'
-                         sh 'GIT_SSH_COMMAND="ssh -i $SSH_KEY" git push origin test46-release/2021.11.01'
+                         sh 'git push origin test46-release/2021.11.01'
                         
                  }
                    
