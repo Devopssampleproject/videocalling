@@ -18,12 +18,12 @@ pipeline{
                         
                // }
              
-              withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-sshkey', keyFileVariable: 'keyfile')]) 
+              withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-sshkey', keyFileVariable: 'SSH_KEY')]) 
                  {       sh ' git config --global credential.helper 'store --file /.my-credentials''
               //           sh 'git checkout -b test46-release/2021.11.01'
 //                         sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Devopssampleproject/videocalling.git test45-release/2021.11.01'
                        
-                         sh 'git push --set-upstream origin test46-release/2021.11.01'
+                         sh 'GIT_SSH_COMMAND="ssh -i $SSH_KEY" git push --set-upstream origin test46-release/2021.11.01'
                         
                  }
                    
