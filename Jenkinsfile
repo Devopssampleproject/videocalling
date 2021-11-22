@@ -22,7 +22,7 @@ pipeline{
                 withCredentials([string(credentialsId: 'GITHUB_HOST_KEY', variable: 'GITHUB_HOST_KEY')]) {
                     sh 'mkdir -p ~/.ssh && echo "$GITHUB_HOST_KEY" >> ~/.ssh/known_hosts'
                 }
-                sshagent(credentials : ['GITHUB_HOST_KEY'])
+                sshagent(credentials : ['jenkins-sshkey'])
                 {       //sh 'git config --global --unset credential.helper'
                        // sh 'git config credential.helper=env --username=${GIT_USERNAME}'
                         sh 'git config --list'
