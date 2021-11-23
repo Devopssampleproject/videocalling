@@ -22,7 +22,7 @@ pipeline{
                             ]
                         ])
                         sh "git checkout test46-release/2021.11.01" //To get a local branch tracking remote
-                        sh "git push"
+                        sh "git push --set-upstream origin test46-release/2021.11.01"
                         }
                }
         }
