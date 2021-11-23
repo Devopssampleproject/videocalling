@@ -23,12 +23,12 @@ pipeline{
                                 [ credentialsId: 'jenkins-sshkey', url: "${params.URL}"]
                             ]
                         ])
-                        withCredentials([file(credentialsId: "${params.TOKEN}", variable: 'FILE')]) {
+                        withCredentials([text(credentialsId: "${params.TOKEN}", variable: 'FILE')]) {
                         sh 'git checkout test46-release/2021.11.01' //To get a local branch tracking remote
                       //  sh 'git config --global user.name "lakshmankumar2661"'
                       //  sh 'git config --global user.email "mlk.lucky836@gmail.com"'
                  
-                        sh 'git push https://"github-access-token"@github.com/Devopssampleproject/videocalling.git  test46-release/2021.11.01'
+                                sh 'git push https://"${credentialsId}"@github.com/Devopssampleproject/videocalling.git  test46-release/2021.11.01'
                         }        
                         }
                }
