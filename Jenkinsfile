@@ -2,7 +2,7 @@ pipeline{
         agent {label 'master'}
         parameters { 
         string(defaultValue: "https://github.com/Devopssampleproject/videocalling.git", description: 'Whats the github URL?', name: 'URL')
-        withCredentials([string(credentialsId: 'github-access-token', variable: 'github-access-token',  name: 'token')])        
+        credentials(credentialsId: 'github-access-token', name: 'token')        
         }
         stages{ 
                 stage('create branch'){
