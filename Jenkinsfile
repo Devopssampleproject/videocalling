@@ -21,10 +21,10 @@ pipeline{
                                 [ credentialsId: 'gitlogin', url: "${params.URL}"]
                             ]
                         ])
-                        sh "git checkout test46-release/2021.11.01" //To get a local branch tracking remote
-                        sh "git config --global user.name "lakshmankumar2661""
+                        sh 'git checkout test46-release/2021.11.01' //To get a local branch tracking remote
+                        sh 'git config --global user.name "lakshmankumar2661"'
                         sh 'git config --global user.email "mlk.lucky836@gmail.com"'
-                        sh "git push --set-upstream origin test46-release/2021.11.01"
+                        sh 'git push --set-upstream origin test46-release/2021.11.01'
                         }
                }
         }
