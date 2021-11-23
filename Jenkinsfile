@@ -27,11 +27,11 @@ pipeline{
                             ]
                         ])
                         withCredentials([string(credentialsId: "${params.TOKEN}", variable: 'TEXT')]) {
-                        sh 'git checkout "${params.BRANCH_NAME}"/"${params.DATE_FORMAT}"' //To get a local branch tracking remote
+                        sh 'git checkout "${BRANCH_NAME}"/"${DATE_FORMAT}"' //To get a local branch tracking remote
                       //  sh 'git config --global user.name "lakshmankumar2661"'
                       //  sh 'git config --global user.email "mlk.lucky836@gmail.com"'
                  
-                                sh 'git push https://"$TEXT"@github.com/Devopssampleproject/videocalling.git  "${params.BRANCH_PREFIX}"-"${params.BRANCH_NAME}"/"${params.DATE_FORMAT}"'
+                                sh 'git push https://"$TEXT"@github.com/Devopssampleproject/videocalling.git  "${BRANCH_PREFIX}"-"${BRANCH_NAME}"/"${DATE_FORMAT}"'
                         }        
                         }
                }
