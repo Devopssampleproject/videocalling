@@ -27,7 +27,7 @@ pipeline{
                             ]
                         ])
                         withCredentials([string(credentialsId: "${params.TOKEN}", variable: 'TEXT')]) {
-                        sh 'PUSH_URL=echo "${URL}" | awk  "//" -F: "{print $2}"'
+                        sh 'PUSH_URL=echo "${params.URL}" | awk  "//" -F: "{print $2}"'
                         sh 'echo $PUSH_URL'
                         sh 'git checkout "${BRANCH_NAME}"/"${DATE_FORMAT}"' //To get a local branch tracking remote
                         sh 'git checkout -b "${BRANCH_PREFIX}"-"${BRANCH_NAME}"/"${DATE_FORMAT}"'
