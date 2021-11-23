@@ -23,7 +23,7 @@ pipeline{
                                 [ credentialsId: 'jenkins-sshkey', url: "${params.URL}"]
                             ]
                         ])
-                        credentials('github-access-token') {
+                        withCredentials(credentials : ['github-access-token']) {
                         sh 'git checkout test46-release/2021.11.01' //To get a local branch tracking remote
                       //  sh 'git config --global user.name "lakshmankumar2661"'
                       //  sh 'git config --global user.email "mlk.lucky836@gmail.com"'
