@@ -2,6 +2,7 @@ pipeline{
         agent {label 'master'}
         parameters { 
         string(defaultValue: "https://github.com/Devopssampleproject/videocalling.git", description: 'Whats the github URL?', name: 'URL')
+        string(defaultValue: "lakshmankumar2611", description: 'Whats the github URL?', name: 'USERNAME')
         credentials(defaultValue: 'github-access-token', name: 'TOKEN')        
         }
         stages{ 
@@ -26,7 +27,7 @@ pipeline{
                       //  sh 'git config --global user.name "lakshmankumar2661"'
                       //  sh 'git config --global user.email "mlk.lucky836@gmail.com"'
                  
-                        sh 'git push https://"${github-access-token}"@github.com/Devopssampleproject/videocalling.git  test46-release/2021.11.01'
+                        sh 'git push https://"${params.USERNAME}":"${github-access-token}"@github.com/Devopssampleproject/videocalling.git  test46-release/2021.11.01'
                         }
                }
         }
