@@ -27,7 +27,7 @@ pipeline{
                             ]
                         ])
                         withCredentials([string(credentialsId: "${params.TOKEN}", variable: 'TEXT')]) {
-                        sh 'git checkout "$BRANCH_NAME"/"$DATE_FORMAT"' //To get a local branch tracking remote
+                        sh 'git checkout "${params.BRANCH_NAME}"/"${params.DATE_FORMAT}"' //To get a local branch tracking remote
                       //  sh 'git config --global user.name "lakshmankumar2661"'
                       //  sh 'git config --global user.email "mlk.lucky836@gmail.com"'
                  
