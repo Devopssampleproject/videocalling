@@ -1,7 +1,7 @@
 pipeline{
         agent {label 'master'}
         stages{ 
-                stage('checkout'){
+                steps('checkout'){
                         sh 'git config --global credential.helper cache'
                         sh 'git config --global credential.helper cache'
                         sh 'git config --global push.default simple'
