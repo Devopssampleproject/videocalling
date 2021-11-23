@@ -1,5 +1,8 @@
 pipeline{
         agent {label 'master'}
+        parameters { 
+        string(defaultValue: "https://github.com/Devopssampleproject/videocalling.git", description: 'Whats the github URL?', name: 'URL')
+        }
         stages{ 
                 stage('create branch'){
                 steps('checkout'){
@@ -15,7 +18,7 @@ pipeline{
                             ],
                             submoduleCfg: [],
                             userRemoteConfigs: [
-                                [ credentialsId: 'gitlogin', url: https://github.com/Devopssampleproject/videocalling.git]
+                                [ credentialsId: 'gitlogin', url: "${params.URL}"]
                             ]
                         ])
                         sh "git checkout test46-release/2021.11.01}" //To get a local branch tracking remote
