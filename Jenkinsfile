@@ -9,7 +9,7 @@ pipeline{
 
                         checkout([
                             $class: 'GitSCM',
-                            branches: [[name: branch]],
+                            branches: [[name: release/2021.11.01]],
                             extensions: [
                                 [$class: 'CloneOption', noTags: true, reference: '', shallow: true]
                             ],
