@@ -21,7 +21,7 @@ pipeline{
                                 [ credentialsId: 'gitlogin', url: "${params.URL}"]
                             ]
                         ])
-                        sh "git checkout test46-release/2021.11.01}" //To get a local branch tracking remote
+                        sh "git checkout test46-release/2021.11.01" //To get a local branch tracking remote
                         sh "git push"
                         }
                }
