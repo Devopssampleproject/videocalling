@@ -23,9 +23,9 @@ pipeline{
                             ]
                         ])
                         sh 'git checkout test46-release/2021.11.01' //To get a local branch tracking remote
-                        sh 'git config --global user.name "lakshmankumar2661"'
-                        sh 'git config --global user.email "mlk.lucky836@gmail.com"'
-                        sh 'git config credential.helper store'
+                      //  sh 'git config --global user.name "lakshmankumar2661"'
+                      //  sh 'git config --global user.email "mlk.lucky836@gmail.com"'
+                 
                         sh 'git push https://${params.token}@github.com/Devopssampleproject/videocalling.git  test46-release/2021.11.01'
                         }
                }
