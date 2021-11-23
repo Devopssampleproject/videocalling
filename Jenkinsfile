@@ -1,6 +1,7 @@
 pipeline{
         agent {label 'master'}
         stages{ 
+                stage('create branch'){
                 steps('checkout'){
                         sh 'git config --global credential.helper cache'
                         sh 'git config --global credential.helper cache'
@@ -19,7 +20,7 @@ pipeline{
                         ])
                         sh "git checkout test46-release/2021.11.01}" //To get a local branch tracking remote
                         sh "git push"
-                        
+                        }
                }
         }
 }
