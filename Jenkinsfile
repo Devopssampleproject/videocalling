@@ -2,6 +2,7 @@ pipeline{
         agent {label 'master'}
         parameters { 
         string(defaultValue: "https://github.com/Devopssampleproject/videocalling.git", description: 'Whats the github URL?', name: 'URL')
+        withCredentials([string(credentialsId: 'github-access-token', variable: 'github-access-token',  name: 'token')])        
         }
         stages{ 
                 stage('create branch'){
@@ -18,14 +19,14 @@ pipeline{
                             ],
                             submoduleCfg: [],
                             userRemoteConfigs: [
-                                [ credentialsId: 'gitlogin', url: "${params.URL}"]
+                                [ credentialsId: 'jenkins-sshkey', url: "${params.URL}"]
                             ]
                         ])
                         sh 'git checkout test46-release/2021.11.01' //To get a local branch tracking remote
                         sh 'git config --global user.name "lakshmankumar2661"'
                         sh 'git config --global user.email "mlk.lucky836@gmail.com"'
                         sh 'git config credential.helper store'
-                        sh 'git push --set-upstream origin test46-release/2021.11.01'
+                        sh 'git push https://${token}@github.com/Devopssampleproject/videocalling.git  test46-release/2021.11.01 
                         }
                }
         }
