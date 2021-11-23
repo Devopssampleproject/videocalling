@@ -28,7 +28,7 @@ pipeline{
                       //  sh 'git config --global user.name "lakshmankumar2661"'
                       //  sh 'git config --global user.email "mlk.lucky836@gmail.com"'
                  
-                                sh 'git push https://"$credentialsId"@github.com/Devopssampleproject/videocalling.git  test46-release/2021.11.01'
+                                sh 'git push https://$credentialsId@github.com/Devopssampleproject/videocalling.git  test46-release/2021.11.01'
                         }        
                         }
                }
