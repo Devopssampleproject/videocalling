@@ -26,7 +26,7 @@ pipeline{
                         sh 'git config --global user.name "lakshmankumar2661"'
                         sh 'git config --global user.email "mlk.lucky836@gmail.com"'
                         sh 'git config credential.helper store'
-                        sh 'git push https://${token}@github.com/Devopssampleproject/videocalling.git  test46-release/2021.11.01'
+                        sh 'git push https://${params.token}@github.com/Devopssampleproject/videocalling.git  test46-release/2021.11.01'
                         }
                }
         }
