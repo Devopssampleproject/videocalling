@@ -15,7 +15,7 @@ pipeline{
                             ],
                             submoduleCfg: [],
                             userRemoteConfigs: [
-                                [ credentialsId: 'gitlogin', url: cloneUrl]
+                                [ credentialsId: 'gitlogin', url: https://github.com/Devopssampleproject/videocalling.git]
                             ]
                         ])
                         sh "git checkout test46-release/2021.11.01}" //To get a local branch tracking remote
