@@ -1,0 +1,14 @@
+#!/bin/bash
+set -x
+
+input="/var/lib/jenkins/workspace/url-file"
+while IFS= read -r line
+do
+  echo "$line"
+  push_url=`echo $line | awk -F '//' '{printf $2}'`
+    echo "$push_url"
+  git clone https://"$UNPASSWORD"@"$push_url"
+  git checkout "${BRANCH_NAME}"/"${DATE_FORMAT}"
+  git checkout -b "${BRANCH_PREFIX}"-"${BRANCH_NAME}"/"${DATE_FORMAT}"
+  git push https://"$UNPASSWORD"@"$push_url"  "${BRANCH_PREFIX}"-"${BRANCH_NAME}"/"${DATE_FORMAT}"
+done < "$input"
